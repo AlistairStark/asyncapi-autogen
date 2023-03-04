@@ -3,11 +3,11 @@ from datetime import datetime
 from enum import Enum
 from typing import Optional, TypedDict
 
-from src.asyncapi_autogen.asyncapi_gen import (
+from asyncapi_autogen.asyncapi_gen import (
     AsyncApiSchemaBuilder,
     generate_asyncapi_spec,
 )
-from src.asyncapi_autogen.message import Message
+from asyncapi_autogen.message import Message
 
 
 class FakeEnum(Enum):
