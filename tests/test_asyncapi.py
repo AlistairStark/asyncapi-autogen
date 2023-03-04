@@ -48,9 +48,7 @@ class ExampleMessageData(Message):
 
 
 def test_async_api():
-    schemas = {
-        ExampleMessageData.__name__: AsyncApiSchemaBuilder.build(ExampleMessageData)
-    }
+    schemas = {ExampleMessageData.__name__: AsyncApiSchemaBuilder.build(ExampleMessageData)}
     expected = {
         "ExampleMessageData": {
             "type": "object",
@@ -149,14 +147,10 @@ class TestGenerateAsyncAPI:
             "asyncapi": "2.5.0",
             "channels": {
                 "topic1": {
-                    "publish": {
-                        "message": {"payload": {"$ref": "#/components/schemas/Schema1"}}
-                    }
+                    "publish": {"message": {"payload": {"$ref": "#/components/schemas/Schema1"}}}
                 },
                 "topic2": {
-                    "publish": {
-                        "message": {"payload": {"$ref": "#/components/schemas/Schema2"}}
-                    }
+                    "publish": {"message": {"payload": {"$ref": "#/components/schemas/Schema2"}}}
                 },
             },
             "components": {
@@ -173,5 +167,5 @@ class TestGenerateAsyncAPI:
                     },
                 }
             },
-            "info": {"title": "Kafka API", "version": "0.0.1"},
+            "info": {"title": "MySpec", "version": "0.0.1"},
         }
